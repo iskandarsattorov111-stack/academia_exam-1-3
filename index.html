@@ -1,0 +1,1435 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Academia English Beginner | Units 1–3 & PC1 Exam</title>
+  <style>
+    :root {
+      --bg: #070d19;
+      --surface: #0f172a;
+      --card: #162033;
+      --card-hover: #1e2d47;
+      --primary: #eab308;
+      --primary-dark: #ca8a04;
+      --primary-glow: rgba(234, 179, 8, 0.28);
+      --blue: #38bdf8;
+      --success: #10b981;
+      --danger: #ef4444;
+      --text: #f8fafc;
+      --muted: #94a3b8;
+      --border: rgba(255, 255, 255, 0.09);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    }
+
+    body {
+      background:
+        radial-gradient(circle at 85% 10%, rgba(234, 179, 8, 0.14), transparent 40%),
+        radial-gradient(circle at 15% 85%, rgba(56, 189, 248, 0.12), transparent 45%),
+        var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 24px 16px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 900px;
+    }
+
+    .top-alert {
+      background: rgba(239, 68, 68, 0.16);
+      border: 1px solid rgba(239, 68, 68, 0.55);
+      color: #fecaca;
+      padding: 14px 20px;
+      border-radius: 16px;
+      margin-bottom: 16px;
+      font-size: 14px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      box-shadow: 0 10px 25px rgba(239, 68, 68, 0.2);
+      animation: slideUp 0.25s ease;
+    }
+
+    .student-bar {
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(234, 179, 8, 0.35);
+      color: #f8fafc;
+      padding: 11px 20px;
+      border-radius: 14px;
+      margin-bottom: 16px;
+      font-size: 13.5px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .student-bar span strong {
+      color: #fde047;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 14px;
+      background: rgba(15, 23, 42, 0.88);
+      backdrop-filter: blur(14px);
+      border: 1px solid var(--border);
+      padding: 18px 24px;
+      border-radius: 20px;
+      margin-bottom: 24px;
+      box-shadow: 0 14px 36px rgba(0, 0, 0, 0.45);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-badge {
+      background: linear-gradient(135deg, #facc15, #eab308);
+      color: #090d16;
+      font-weight: 900;
+      padding: 7px 13px;
+      border-radius: 11px;
+      font-size: 12px;
+      letter-spacing: 0.6px;
+      text-transform: uppercase;
+    }
+
+    .brand h1 {
+      font-size: 19px;
+      font-weight: 800;
+      letter-spacing: -0.2px;
+    }
+
+    .brand small {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 500;
+    }
+
+    .steps-bar {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .step-pill {
+      padding: 7px 14px;
+      border-radius: 999px;
+      font-size: 12.5px;
+      font-weight: 700;
+      background: var(--card);
+      color: var(--muted);
+      border: 1px solid var(--border);
+      transition: all 0.25s ease;
+    }
+
+    .step-pill.active {
+      background: var(--primary);
+      color: #090d16;
+      box-shadow: 0 0 18px var(--primary-glow);
+      border-color: var(--primary);
+    }
+
+    .step-pill.done {
+      background: rgba(16, 185, 129, 0.16);
+      color: var(--success);
+      border-color: rgba(16, 185, 129, 0.45);
+    }
+
+    .card {
+      background: rgba(22, 32, 51, 0.78);
+      backdrop-filter: blur(16px);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 34px;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
+      animation: slideUp 0.35s ease;
+    }
+
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    .hero-title {
+      font-size: 29px;
+      font-weight: 800;
+      margin-bottom: 10px;
+      color: #fde047;
+      background: linear-gradient(90deg, #ffffff 0%, #fde047 65%, #38bdf8 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-sub {
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.65;
+      margin-bottom: 24px;
+    }
+
+    .unit-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 24px;
+    }
+
+    .unit-chip {
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid rgba(234, 179, 8, 0.3);
+      color: #fef08a;
+      font-size: 12.5px;
+      font-weight: 600;
+      padding: 6px 12px;
+      border-radius: 10px;
+    }
+
+    .stage-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+      margin-bottom: 26px;
+    }
+
+    .stage-box {
+      background: rgba(10, 16, 29, 0.72);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 20px;
+    }
+
+    .stage-box h3 {
+      font-size: 16px;
+      margin-bottom: 8px;
+      color: #fff;
+    }
+
+    .stage-box p {
+      font-size: 13.5px;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .input-group label {
+      display: block;
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+
+    .input-group input {
+      width: 100%;
+      padding: 13px 16px;
+      border-radius: 13px;
+      border: 1px solid var(--border);
+      background: rgba(10, 16, 29, 0.85);
+      color: #fff;
+      font-size: 15px;
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .input-group input:focus {
+      border-color: var(--primary);
+    }
+
+    .input-group input.invalid {
+      border-color: var(--danger);
+      box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.2);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 14px 26px;
+      border-radius: 14px;
+      border: none;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .btn-gold {
+      background: linear-gradient(135deg, #facc15, #eab308);
+      color: #090d16;
+      box-shadow: 0 10px 24px var(--primary-glow);
+    }
+
+    .btn-gold:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.05);
+    }
+
+    .btn-blue {
+      background: linear-gradient(135deg, #38bdf8, #0284c7);
+      color: #fff;
+      box-shadow: 0 10px 24px rgba(56, 189, 248, 0.28);
+    }
+
+    .btn-blue:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+
+    .btn-outline:hover {
+      background: rgba(255, 255, 255, 0.11);
+    }
+
+    .progress-wrap {
+      margin-bottom: 18px;
+    }
+
+    .progress-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 9px;
+      font-weight: 700;
+    }
+
+    .topic-tag {
+      background: rgba(234, 179, 8, 0.16);
+      color: #fde047;
+      border: 1px solid rgba(234, 179, 8, 0.3);
+      padding: 4px 11px;
+      border-radius: 9px;
+      font-size: 12px;
+    }
+
+    .progress-bar {
+      width: 100%;
+      height: 8px;
+      background: rgba(10, 16, 29, 0.95);
+      border-radius: 999px;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, #facc15, #10b981);
+      transition: width 0.3s ease;
+    }
+
+    .question-point-header {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(56, 189, 248, 0.14);
+      border: 1px solid rgba(56, 189, 248, 0.35);
+      color: #7dd3fc;
+      font-size: 13px;
+      font-weight: 800;
+      padding: 5px 13px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+      letter-spacing: 0.3px;
+    }
+
+    .question-text {
+      font-size: 21px;
+      font-weight: 700;
+      line-height: 1.5;
+      margin-bottom: 22px;
+      color: #f8fafc;
+    }
+
+    .options-list {
+      display: grid;
+      gap: 12px;
+      margin-bottom: 22px;
+    }
+
+    .option-btn {
+      width: 100%;
+      text-align: left;
+      padding: 15px 18px;
+      border-radius: 14px;
+      background: rgba(10, 16, 29, 0.75);
+      border: 1px solid var(--border);
+      color: var(--text);
+      font-size: 16px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      transition: all 0.2s ease;
+    }
+
+    .option-btn:hover:not(:disabled) {
+      background: var(--card-hover);
+      border-color: rgba(234, 179, 8, 0.55);
+    }
+
+    .option-letter {
+      width: 32px;
+      height: 32px;
+      border-radius: 9px;
+      background: rgba(255, 255, 255, 0.07);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 14px;
+      flex-shrink: 0;
+    }
+
+    .option-btn.correct {
+      background: rgba(16, 185, 129, 0.18);
+      border-color: var(--success);
+      color: #a7f3d0;
+    }
+
+    .option-btn.correct .option-letter {
+      background: var(--success);
+      color: #064e3b;
+    }
+
+    .option-btn.wrong {
+      background: rgba(239, 68, 68, 0.18);
+      border-color: var(--danger);
+      color: #fecaca;
+    }
+
+    .option-btn.wrong .option-letter {
+      background: var(--danger);
+      color: #fff;
+    }
+
+    .feedback-box {
+      padding: 14px 18px;
+      border-radius: 13px;
+      font-size: 14px;
+      line-height: 1.55;
+      margin-bottom: 20px;
+    }
+
+    .feedback-box.ok {
+      background: rgba(16, 185, 129, 0.13);
+      border: 1px solid rgba(16, 185, 129, 0.38);
+      color: #6ee7b7;
+    }
+
+    .feedback-box.bad {
+      background: rgba(239, 68, 68, 0.13);
+      border: 1px solid rgba(239, 68, 68, 0.38);
+      color: #fca5a5;
+    }
+
+    .result-banner {
+      text-align: center;
+      padding: 26px;
+      border-radius: 20px;
+      margin-bottom: 24px;
+    }
+
+    .result-banner.pass {
+      background: rgba(16, 185, 129, 0.14);
+      border: 1px solid rgba(16, 185, 129, 0.42);
+    }
+
+    .result-banner.fail {
+      background: rgba(239, 68, 68, 0.14);
+      border: 1px solid rgba(239, 68, 68, 0.42);
+    }
+
+    .status-chip {
+      display: inline-block;
+      padding: 6px 16px;
+      border-radius: 999px;
+      font-weight: 900;
+      font-size: 12.5px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .pass .status-chip {
+      background: var(--success);
+      color: #042f2e;
+    }
+
+    .fail .status-chip {
+      background: var(--danger);
+      color: #fff;
+    }
+
+    .big-score {
+      font-size: 46px;
+      font-weight: 900;
+      margin: 4px 0;
+    }
+
+    .analysis-box {
+      background: rgba(10, 16, 29, 0.75);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 20px;
+      margin-bottom: 22px;
+    }
+
+    .analysis-box h3 {
+      font-size: 16px;
+      margin-bottom: 12px;
+      color: #fde047;
+    }
+
+    .weak-list {
+      list-style: none;
+      display: grid;
+      gap: 10px;
+    }
+
+    .weak-list li {
+      background: rgba(255, 255, 255, 0.03);
+      padding: 12px 15px;
+      border-radius: 11px;
+      font-size: 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      border-left: 3px solid var(--danger);
+    }
+
+    .audio-panel {
+      background: rgba(10, 16, 29, 0.85);
+      border: 1px solid rgba(56, 189, 248, 0.35);
+      border-radius: 18px;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 22px;
+    }
+
+    .pulse-dot {
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      background: var(--success);
+      display: inline-block;
+      margin-right: 8px;
+    }
+
+    .speaking-scene {
+      background: #090e1a;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 16px;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .speaking-scene svg {
+      width: 100%;
+      max-width: 660px;
+      height: auto;
+      border-radius: 12px;
+    }
+
+    .mic-controls {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+
+    .mic-btn {
+      background: linear-gradient(135deg, #ef4444, #b91c1c);
+      color: #fff;
+      box-shadow: 0 8px 22px rgba(239, 68, 68, 0.35);
+    }
+
+    .mic-btn.recording {
+      animation: pulseMic 1.2s infinite;
+    }
+
+    @keyframes pulseMic {
+      0% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7); }
+      70% { box-shadow: 0 0 0 16px rgba(239, 68, 68, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+    }
+
+    .transcript-box {
+      width: 100%;
+      min-height: 115px;
+      background: rgba(10, 16, 29, 0.9);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 14px;
+      color: #f8fafc;
+      font-size: 15px;
+      line-height: 1.6;
+      resize: vertical;
+      margin-bottom: 16px;
+    }
+
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 14px;
+      margin-bottom: 22px;
+    }
+
+    .summary-item {
+      background: rgba(10, 16, 29, 0.8);
+      border: 1px solid var(--border);
+      border-radius: 15px;
+      padding: 16px;
+      text-align: center;
+    }
+
+    .summary-item span {
+      display: block;
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+
+    .summary-item strong {
+      font-size: 22px;
+      color: #fff;
+    }
+
+    .hint-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 18px;
+    }
+
+    .hint-pill {
+      font-size: 12px;
+      padding: 5px 11px;
+      border-radius: 8px;
+      background: rgba(56, 189, 248, 0.14);
+      color: #7dd3fc;
+      border: 1px solid rgba(56, 189, 248, 0.3);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="top-alert hidden" id="top-alert">
+      <span id="top-alert-text">Iltimos, testni boshlash uchun ism, familiya, turar joy va yoshingizni to‘ldiring!</span>
+    </div>
+
+    <div class="student-bar hidden" id="student-bar">
+      <span>Ism-familiya: <strong id="bar-fullname">-</strong></span>
+      <span>Turar joy: <strong id="bar-location">-</strong></span>
+      <span>Yosh: <strong id="bar-age">-</strong></span>
+    </div>
+
+    <header class="header">
+      <div class="brand">
+        <span class="brand-badge">ACADEMIA BEGINNER</span>
+        <div>
+          <h1>Units 1–3 & PC1 Assessment</h1>
+          <small>Hello! • Friends and things • Family and pets</small>
+        </div>
+      </div>
+      <div class="steps-bar">
+        <div class="step-pill active" id="pill-1">1. Grammar & Vocab (30)</div>
+        <div class="step-pill" id="pill-2">2. Listening (5)</div>
+        <div class="step-pill" id="pill-3">3. Speaking</div>
+      </div>
+    </header>
+
+    <section class="card" id="screen-start">
+      <h2 class="hero-title">Academia English Beginner — Units 1–3 Imtihoni</h2>
+      <p class="hero-sub">
+        Savollar <strong>Academia English Beginner (Student's Book)</strong> darsligining <strong>Unit 1, Unit 2, Unit 3</strong> va <strong>Progress Check 1 (PC1)</strong> qismidagi grammatika hamda lug‘at mavzulari asosida tuzilgan. Imtihonga kirish uchun barcha ma'lumotlarni to‘ldiring.
+      </p>
+
+      <div class="unit-chips">
+        <span class="unit-chip">Unit 1: be (am/is/are), a/an, plurals, What's this?</span>
+        <span class="unit-chip">Unit 2: we/you/they + be, Wh- questions, this/that/these/those</span>
+        <span class="unit-chip">Unit 3: my/your/his/her/our/their, have/has got, adjectives, 's</span>
+      </div>
+
+      <div class="stage-grid">
+        <div class="stage-box">
+          <h3>1-bosqich: Test (30 savol)</h3>
+          <p>60 ball. Yakunda ball, <strong>O‘tdi / O‘tmadi</strong> natijasi va qaysi mavzuni yaxshiroq o‘rganish kerakligi chiqadi.</p>
+        </div>
+        <div class="stage-box">
+          <h3>2-bosqich: Listening (5 audio)</h3>
+          <p>20 ball. Inglizcha matnlarni eshitib, savollarga to‘g‘ri javob bering.</p>
+        </div>
+        <div class="stage-box">
+          <h3>3-bosqich: Speaking (Rasm)</h3>
+          <p>20 ball. Rasmni inglizcha tasvirlang, dastur xato va kamchiliklarni ko‘rsatib baholaydi.</p>
+        </div>
+      </div>
+
+      <div class="form-grid">
+        <div class="input-group">
+          <label for="student-firstname">Ism:</label>
+          <input type="text" id="student-firstname" placeholder="Ismingiz" />
+        </div>
+        <div class="input-group">
+          <label for="student-lastname">Familiya:</label>
+          <input type="text" id="student-lastname" placeholder="Familiyangiz" />
+        </div>
+        <div class="input-group">
+          <label for="student-location">Turar joy:</label>
+          <input type="text" id="student-location" placeholder="Viloyat / tuman / shahar" />
+        </div>
+        <div class="input-group">
+          <label for="student-age">Yosh:</label>
+          <input type="number" id="student-age" min="5" max="100" placeholder="Yoshingiz" />
+        </div>
+      </div>
+
+      <button class="btn btn-gold" onclick="startExam()">Imtihonni boshlash →</button>
+    </section>
+
+    <section class="card hidden" id="screen-grammar">
+      <div class="progress-wrap">
+        <div class="progress-meta">
+          <span id="g-counter">Savol 1 / 30</span>
+          <span class="topic-tag" id="g-topic">Unit 1: be (I / you)</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" id="g-progress"></div>
+        </div>
+      </div>
+
+      <div class="question-point-header" id="g-points">2 ball</div>
+      <div class="question-text" id="g-question"></div>
+      <div class="options-list" id="g-options"></div>
+      <div class="feedback-box hidden" id="g-feedback"></div>
+      <button class="btn btn-gold hidden" id="g-next-btn" onclick="nextGrammar()">Keyingi savol →</button>
+    </section>
+
+    <section class="card hidden" id="screen-grammar-result">
+      <div class="result-banner" id="g-banner">
+        <div class="status-chip" id="g-status">O‘TDI</div>
+        <div class="big-score" id="g-score-text">48 / 60</div>
+        <p id="g-percent-text">80% natija (O‘tish bali: 42 / 60)</p>
+      </div>
+
+      <div class="analysis-box">
+        <h3>Qaysi mavzuni yaxshiroq o‘rganish kerak?</h3>
+        <ul class="weak-list" id="g-weak-list"></ul>
+      </div>
+
+      <button class="btn btn-blue" onclick="startListening()">2-bosqich: Listeningni boshlash →</button>
+    </section>
+
+    <section class="card hidden" id="screen-listening">
+      <div class="progress-wrap">
+        <div class="progress-meta">
+          <span id="l-counter">Listening 1 / 5</span>
+          <span class="topic-tag">Academia Units 1–3 Audio</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" id="l-progress"></div>
+        </div>
+      </div>
+
+      <div class="audio-panel">
+        <div>
+          <strong style="display:block; margin-bottom:4px;"><span class="pulse-dot"></span>Inglizcha audioni tinglang</strong>
+          <span style="font-size:13px; color:var(--muted);">Yana bir bor eshitish uchun tugmani bosing</span>
+        </div>
+        <button class="btn btn-gold" onclick="playCurrentAudio()">🔊 Audioni eshitish</button>
+      </div>
+
+      <div class="question-point-header" id="l-points">4 ball</div>
+      <div class="question-text" id="l-question"></div>
+      <div class="options-list" id="l-options"></div>
+      <div class="feedback-box hidden" id="l-feedback"></div>
+      <button class="btn btn-blue hidden" id="l-next-btn" onclick="nextListening()">Keyingi audio →</button>
+    </section>
+
+    <section class="card hidden" id="screen-listening-result">
+      <div class="result-banner" id="l-banner">
+        <div class="status-chip" id="l-status">O‘TDI</div>
+        <div class="big-score" id="l-score-text">16 / 20</div>
+        <p id="l-percent-text">80% natija (O‘tish bali: 14 / 20)</p>
+      </div>
+
+      <div class="analysis-box">
+        <h3>Listening bo‘yicha tahlil:</h3>
+        <p id="l-advice" style="font-size:14px; color:#e2e8f0; line-height:1.6;"></p>
+      </div>
+
+      <button class="btn btn-gold" onclick="startSpeaking()">Speakingni boshlash 🎙️</button>
+    </section>
+
+    <section class="card hidden" id="screen-speaking">
+      <div class="progress-meta" style="margin-bottom:14px;">
+        <span>3-bosqich: Speaking — Rasmni inglizcha tasvirlang</span>
+        <span class="topic-tag">Units 1–3 & PC1</span>
+      </div>
+
+      <div class="question-point-header">20 ball</div>
+      <p style="font-size:14px; color:var(--muted); margin-bottom:14px; line-height:1.55;">
+        Rasmdagi odamlar, hayvonlar, ranglar va narsalarni <strong>Unit 1–3</strong> mavzulari asosida ingliz tilida tasvirlang:
+      </p>
+
+      <div class="hint-pills">
+        <span class="hint-pill">This is a boy / These are two cats</span>
+        <span class="hint-pill">He is / She is / They are</span>
+        <span class="hint-pill">His / Her / Their + noun</span>
+        <span class="hint-pill">has got / have got</span>
+        <span class="hint-pill">big / small / orange / white</span>
+      </div>
+
+      <div class="speaking-scene">
+        <svg viewBox="0 0 660 300" xmlns="http://www.w3.org/2000/svg">
+          <rect width="660" height="225" fill="#1e293b"/>
+          <rect y="225" width="660" height="75" fill="#334155"/>
+
+          <rect x="42" y="28" width="135" height="92" rx="8" fill="#0284c7" stroke="#f8fafc" stroke-width="5"/>
+          <circle cx="142" cy="58" r="15" fill="#facc15"/>
+          <line x1="110" y1="28" x2="110" y2="120" stroke="#f8fafc" stroke-width="4"/>
+          <line x1="42" y1="74" x2="177" y2="74" stroke="#f8fafc" stroke-width="4"/>
+
+          <rect x="245" y="175" width="180" height="13" rx="4" fill="#d97706"/>
+          <rect x="260" y="188" width="12" height="62" fill="#92400e"/>
+          <rect x="398" y="188" width="12" height="62" fill="#92400e"/>
+
+          <rect x="265" y="162" width="36" height="13" rx="2" fill="#ef4444"/>
+          <rect x="268" y="151" width="30" height="11" rx="2" fill="#38bdf8"/>
+
+          <circle cx="340" cy="163" r="11" fill="#dc2626"/>
+          <path d="M340 152 Q346 144 352 148" stroke="#22c55e" stroke-width="3" fill="none"/>
+
+          <rect x="378" y="142" width="34" height="23" rx="3" fill="#e2e8f0"/>
+          <rect x="373" y="165" width="44" height="7" rx="2" fill="#64748b"/>
+
+          <circle cx="148" cy="144" r="19" fill="#fed7aa"/>
+          <path d="M129 140 Q148 117 167 140" fill="#1e1b4b"/>
+          <rect x="131" y="165" width="34" height="50" rx="8" fill="#2563eb"/>
+          <rect x="134" y="215" width="11" height="40" fill="#0f172a"/>
+          <rect x="151" y="215" width="11" height="40" fill="#0f172a"/>
+          <circle cx="182" cy="196" r="15" fill="#ef4444" stroke="#fff" stroke-width="2"/>
+
+          <circle cx="495" cy="142" r="19" fill="#fed7aa"/>
+          <path d="M475 144 Q495 112 515 144 L518 170 L472 170 Z" fill="#78350f"/>
+          <polygon points="495,162 473,222 517,222" fill="#f43f5e"/>
+          <rect x="483" y="222" width="9" height="34" fill="#fed7aa"/>
+          <rect x="498" y="222" width="9" height="34" fill="#fed7aa"/>
+
+          <ellipse cx="565" cy="246" rx="18" ry="11" fill="#f59e0b"/>
+          <circle cx="552" cy="234" r="10" fill="#f59e0b"/>
+          <polygon points="544,226 548,216 553,225" fill="#f59e0b"/>
+          <polygon points="553,225 558,216 561,226" fill="#f59e0b"/>
+
+          <ellipse cx="614" cy="249" rx="16" ry="10" fill="#f1f5f9"/>
+          <circle cx="602" cy="237" r="9" fill="#f1f5f9"/>
+          <polygon points="595,230 599,221 603,229" fill="#f1f5f9"/>
+          <polygon points="603,229 607,221 610,230" fill="#f1f5f9"/>
+        </svg>
+      </div>
+
+      <div class="mic-controls">
+        <button class="btn mic-btn" id="mic-toggle-btn" onclick="toggleRecording()">🎙️ Mikrofonni yoqish</button>
+        <button class="btn btn-outline" onclick="clearSpeech()">Tozalash</button>
+        <span id="mic-status" style="font-size:13px; color:var(--muted);">Mikrofon tayyor</span>
+      </div>
+
+      <textarea class="transcript-box" id="speech-text" placeholder="Mikrofonga inglizcha gapiring..."></textarea>
+
+      <button class="btn btn-gold" onclick="evaluateSpeaking()">Speakingni baholash va yakunlash ✓</button>
+    </section>
+
+    <section class="card hidden" id="screen-final">
+      <div class="result-banner" id="final-banner">
+        <div class="status-chip" id="final-status">O‘TDI</div>
+        <div class="big-score" id="final-score">84 / 100</div>
+        <p id="final-student-info">O‘quvchi: ... | Umumiy natija: 84%</p>
+      </div>
+
+      <div class="summary-grid">
+        <div class="summary-item">
+          <span>1. Grammar & Vocab (60)</span>
+          <strong id="sum-grammar">48 / 60</strong>
+        </div>
+        <div class="summary-item">
+          <span>2. Listening (20)</span>
+          <strong id="sum-listening">16 / 20</strong>
+        </div>
+        <div class="summary-item">
+          <span>3. Speaking (20)</span>
+          <strong id="sum-speaking">16 / 20</strong>
+        </div>
+      </div>
+
+      <div class="analysis-box">
+        <h3>Speaking natijasi va kamchiliklar:</h3>
+        <div id="speaking-feedback-details" style="font-size:14px; color:#e2e8f0; line-height:1.7;"></div>
+      </div>
+
+      <div class="analysis-box">
+        <h3>Yakuniy xulosa (Academia Units 1–3 & PC1):</h3>
+        <p id="final-recommendation" style="font-size:14px; color:#cbd5e1; line-height:1.65;"></p>
+      </div>
+
+      <button class="btn btn-outline" onclick="location.reload()">↻ Qaytadan boshlash</button>
+    </section>
+  </div>
+
+  <script>
+    const grammarQuestions = [
+      { topic: "Unit 1: be (I am / you are / Are you...?)", points: 2, q: "Hello! I ___ Amir. What is your name?", options: ["is", "are", "am", "be"], answer: 2 },
+      { topic: "Unit 1: be (I am / you are / Are you...?)", points: 2, q: "___ a new student? — Yes, I am.", options: ["Are you", "Am you", "Is you", "You are"], answer: 0 },
+      { topic: "Unit 1: be (he / she / it)", points: 2, q: "Where is she from? — ___ from Uzbekistan.", options: ["He's", "It's", "They're", "She's"], answer: 3 },
+      { topic: "Unit 1: be (he / she / it)", points: 2, q: "___ he from Korea? — No, he ___.", options: ["Are / aren't", "Is / isn't", "Is / aren't", "Am / isn't"], answer: 1 },
+      { topic: "Unit 1: a / an & plurals", points: 2, q: "I have ___ apple and ___ book in my bag.", options: ["an / a", "a / a", "a / an", "an / an"], answer: 0 },
+      { topic: "Unit 1: a / an & plurals", points: 2, q: "What are these? — They are ___.", options: ["a pencil", "an pencil", "pencils", "the pencil"], answer: 2 },
+      { topic: "Unit 1: What's this? / What are these?", points: 2, q: "___ this? — It's a classroom bag.", options: ["What are", "What's", "Who's", "How old"], answer: 1 },
+      { topic: "Unit 1: What's this? / What are these?", points: 2, q: "What are these? — ___ my pens.", options: ["They're", "It's", "This is", "He's"], answer: 0 },
+      { topic: "Unit 1: Days & greetings", points: 2, q: "Today is Monday. Tomorrow is ___.", options: ["Sunday", "Friday", "Saturday", "Tuesday"], answer: 3 },
+      { topic: "Unit 1: be (review)", points: 2, q: "This ___ my teacher. His name ___ Mr Smith.", options: ["are / is", "is / is", "is / am", "am / is"], answer: 1 },
+
+      { topic: "Unit 2: we / you / they + be", points: 2, q: "We ___ classmates. We aren't teachers.", options: ["am", "is", "be", "are"], answer: 3 },
+      { topic: "Unit 2: we / you / they + be", points: 2, q: "Are they at school? — No, they ___.", options: ["isn't", "amn't", "aren't", "not"], answer: 2 },
+      { topic: "Unit 2: Wh- questions + be", points: 2, q: "___ old are you? — I'm sixteen.", options: ["Who", "How", "What", "Where"], answer: 1 },
+      { topic: "Unit 2: Wh- questions + be", points: 2, q: "___ is your phone number? — It's 90-123-45-67.", options: ["Who", "Where", "How old", "What"], answer: 3 },
+      { topic: "Unit 2: Wh- questions + be", points: 2, q: "___ is that boy over there? — That's my friend.", options: ["Who", "What", "How", "Where"], answer: 0 },
+      { topic: "Unit 2: this / that / these / those", points: 2, q: "___ is my bag here, and ___ is your bag over there.", options: ["These / those", "This / that", "That / this", "This / these"], answer: 1 },
+      { topic: "Unit 2: this / that / these / those", points: 2, q: "Look at ___ books here on my desk!", options: ["that", "this", "these", "those"], answer: 2 },
+      { topic: "Unit 2: this / that / these / those", points: 2, q: "Are ___ your keys over there on the table?", options: ["this", "that", "these", "those"], answer: 3 },
+      { topic: "Unit 2: Small things & colours", points: 2, q: "It is ___ red bag and ___ green notebook.", options: ["a / a", "an / a", "a / an", "an / an"], answer: 0 },
+      { topic: "Unit 2: Classroom language", points: 2, q: "\"Sorry, I don't ___.\" — \"Okay, listen again.\"", options: ["spell", "colour", "understand", "number"], answer: 2 },
+
+      { topic: "Unit 3: Possessive adjectives & 's", points: 2, q: "This is my brother. ___ name is Ali, and this is ___ sister.", options: ["His / his", "Her / her", "Their / his", "His / her"], answer: 3 },
+      { topic: "Unit 3: Possessive adjectives & 's", points: 2, q: "We have got a big family. ___ house is near the park.", options: ["Your", "Our", "Their", "Its"], answer: 1 },
+      { topic: "Unit 3: Possessive adjectives & 's", points: 2, q: "This is ___ cat. Its name is Mimi.", options: ["Amirs", "Amirs'", "Amir's", "Amir"], answer: 2 },
+      { topic: "Unit 3: have got / has got", points: 2, q: "I ___ a small cat, and my sister ___ a white rabbit.", options: ["has got / have got", "am got / is got", "have got / have got", "have got / has got"], answer: 3 },
+      { topic: "Unit 3: have got / has got", points: 2, q: "___ you got a pet? — No, I ___.", options: ["Have / haven't", "Has / hasn't", "Are / aren't", "Have / hasn't"], answer: 0 },
+      { topic: "Unit 3: have got / has got", points: 2, q: "___ your brother got a dog? — Yes, he ___.", options: ["Have / have", "Has / has", "Has / have", "Is / is"], answer: 1 },
+      { topic: "Unit 3: have got / has got", points: 2, q: "They ___ a farm, they haven't got a car.", options: ["has got", "are got", "have got", "got"], answer: 2 },
+      { topic: "Unit 3: Adjectives & body parts", points: 2, q: "The rabbit is very ___ and it's got long ___.", options: ["big / nose", "long / eyes", "tall / tail", "small / ears"], answer: 3 },
+      { topic: "PC1 Review: be, have got, 's", points: 2, q: "My parents ___ doctors. They ___ two children.", options: ["are / have got", "is / has got", "are / has got", "am / have got"], answer: 0 },
+      { topic: "PC1 Review: be, have got, 's", points: 2, q: "What's ___ name? — Her name is Laylo. She's got a ___ dog.", options: ["his / brown", "her / brown", "your / green", "their / blue"], answer: 1 }
+    ];
+
+    const listeningQuestions = [
+      {
+        points: 4,
+        audio: "Hi! I'm Laylo. I'm from Tashkent. This is my friend Sara. She's from Samarkand.",
+        q: "Where is Sara from?",
+        options: ["Samarkand", "Tashkent", "Bukhara", "London"],
+        answer: 0
+      },
+      {
+        points: 4,
+        audio: "Hello! My phone number is 91-456-78-90. These are my books and that is my bag.",
+        q: "Which sentence is true according to the audio?",
+        options: ["Those are her books", "This is her phone", "These are her books", "That is her book"],
+        answer: 2
+      },
+      {
+        points: 4,
+        audio: "We are classmates. We are in room 4. Today is Wednesday.",
+        q: "What day is it today?",
+        options: ["Monday", "Tuesday", "Thursday", "Wednesday"],
+        answer: 3
+      },
+      {
+        points: 4,
+        audio: "Look at Amir's sister. She has got a small white cat and a big black dog.",
+        q: "What has Amir's sister got?",
+        options: ["A big white cat", "A small white cat and a big black dog", "Two small dogs", "A brown cat"],
+        answer: 1
+      },
+      {
+        points: 4,
+        audio: "My name is Davron. I'm fourteen. I haven't got a pet, but my cousin has got a horse.",
+        q: "Who has got a horse?",
+        options: ["Davron's cousin", "Davron", "Davron's brother", "Davron's friend"],
+        answer: 0
+      }
+    ];
+
+    let studentData = {
+      firstName: "",
+      lastName: "",
+      location: "",
+      age: ""
+    };
+    let gIndex = 0;
+    let gScore = 0;
+    let topicStats = {};
+    let lIndex = 0;
+    let lScore = 0;
+    let sScore = 0;
+    let recognition = null;
+    let isRecording = false;
+
+    function showTopAlert(msg) {
+      const alertEl = document.getElementById("top-alert");
+      document.getElementById("top-alert-text").textContent = msg;
+      alertEl.classList.remove("hidden");
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    function hideTopAlert() {
+      document.getElementById("top-alert").classList.add("hidden");
+    }
+
+    function startExam() {
+      const firstInput = document.getElementById("student-firstname");
+      const lastInput = document.getElementById("student-lastname");
+      const locInput = document.getElementById("student-location");
+      const ageInput = document.getElementById("student-age");
+
+      const firstName = firstInput.value.trim();
+      const lastName = lastInput.value.trim();
+      const location = locInput.value.trim();
+      const age = ageInput.value.trim();
+
+      [firstInput, lastInput, locInput, ageInput].forEach(el => el.classList.remove("invalid"));
+
+      const missing = [];
+      if (!firstName) { firstInput.classList.add("invalid"); missing.push("Ism"); }
+      if (!lastName) { lastInput.classList.add("invalid"); missing.push("Familiya"); }
+      if (!location) { locInput.classList.add("invalid"); missing.push("Turar joy"); }
+      if (!age || Number(age) <= 0) { ageInput.classList.add("invalid"); missing.push("Yosh"); }
+
+      if (missing.length > 0) {
+        showTopAlert(`To‘ldiring! Quyidagi maydonlar bo‘sh: ${missing.join(", ")}.`);
+        return;
+      }
+
+      hideTopAlert();
+      studentData = { firstName, lastName, location, age };
+
+      document.getElementById("bar-fullname").textContent = `${firstName} ${lastName}`;
+      document.getElementById("bar-location").textContent = location;
+      document.getElementById("bar-age").textContent = `${age} yosh`;
+      document.getElementById("student-bar").classList.remove("hidden");
+
+      grammarQuestions.forEach(item => {
+        if (!topicStats[item.topic]) {
+          topicStats[item.topic] = { total: 0, wrong: 0 };
+        }
+        topicStats[item.topic].total++;
+      });
+
+      showScreen("screen-grammar");
+      renderGrammar();
+    }
+
+    function showScreen(id) {
+      document.querySelectorAll("section.card").forEach(s => s.classList.add("hidden"));
+      document.getElementById(id).classList.remove("hidden");
+    }
+
+    function renderGrammar() {
+      const item = grammarQuestions[gIndex];
+      document.getElementById("g-counter").textContent = `Savol ${gIndex + 1} / ${grammarQuestions.length}`;
+      document.getElementById("g-topic").textContent = item.topic;
+      document.getElementById("g-progress").style.width = `${((gIndex + 1) / grammarQuestions.length) * 100}%`;
+      document.getElementById("g-points").textContent = `${item.points} ball`;
+      document.getElementById("g-question").textContent = item.q;
+
+      const optWrap = document.getElementById("g-options");
+      optWrap.innerHTML = "";
+      const letters = ["A", "B", "C", "D"];
+
+      item.options.forEach((opt, idx) => {
+        const btn = document.createElement("button");
+        btn.className = "option-btn";
+        btn.innerHTML = `<span class="option-letter">${letters[idx]}</span><span>${opt}</span>`;
+        btn.onclick = () => selectGrammar(idx, btn);
+        optWrap.appendChild(btn);
+      });
+
+      document.getElementById("g-feedback").classList.add("hidden");
+      document.getElementById("g-next-btn").classList.add("hidden");
+    }
+
+    function selectGrammar(selectedIdx, btn) {
+      const item = grammarQuestions[gIndex];
+      const buttons = document.querySelectorAll("#g-options .option-btn");
+      buttons.forEach(b => b.disabled = true);
+
+      const fb = document.getElementById("g-feedback");
+      fb.classList.remove("hidden", "ok", "bad");
+
+      if (selectedIdx === item.answer) {
+        btn.classList.add("correct");
+        gScore += item.points;
+        fb.classList.add("ok");
+        fb.textContent = `To‘g‘ri javob! (+${item.points} ball)`;
+      } else {
+        btn.classList.add("wrong");
+        buttons[item.answer].classList.add("correct");
+        topicStats[item.topic].wrong++;
+        fb.classList.add("bad");
+        fb.textContent = `Xato! To‘g‘ri javob: ${item.options[item.answer]} (${item.topic})`;
+      }
+
+      const nextBtn = document.getElementById("g-next-btn");
+      nextBtn.textContent = gIndex === grammarQuestions.length - 1 ? "1-bosqich natijasini ko‘rish →" : "Keyingi savol →";
+      nextBtn.classList.remove("hidden");
+    }
+
+    function nextGrammar() {
+      gIndex++;
+      if (gIndex < grammarQuestions.length) {
+        renderGrammar();
+      } else {
+        showGrammarResult();
+      }
+    }
+
+    function showGrammarResult() {
+      showScreen("screen-grammar-result");
+      const maxG = grammarQuestions.reduce((sum, q) => sum + q.points, 0);
+      const pct = Math.round((gScore / maxG) * 100);
+      const passed = pct >= 70;
+
+      const banner = document.getElementById("g-banner");
+      banner.className = `result-banner ${passed ? "pass" : "fail"}`;
+      document.getElementById("g-status").textContent = passed ? "O‘TDI (PASSED)" : "O‘TMADI (FAILED)";
+      document.getElementById("g-score-text").textContent = `${gScore} / ${maxG}`;
+      document.getElementById("g-percent-text").textContent = `${pct}% natija (O‘tish bali: 42 / ${maxG})`;
+
+      const weakList = document.getElementById("g-weak-list");
+      weakList.innerHTML = "";
+      let hasWeak = false;
+
+      Object.entries(topicStats).forEach(([topic, data]) => {
+        if (data.wrong > 0) {
+          hasWeak = true;
+          const li = document.createElement("li");
+          li.innerHTML = `<span><strong>${topic}</strong> — bu mavzuni qayta o‘rganish kerak</span><span style="color:#fca5a5; font-weight:700; white-space:nowrap;">${data.wrong} / ${data.total} xato</span>`;
+          weakList.appendChild(li);
+        }
+      });
+
+      if (!hasWeak) {
+        const li = document.createElement("li");
+        li.style.borderLeftColor = "#10b981";
+        li.innerHTML = `<span>Zo‘r! Academia English Beginner (Units 1–3 & PC1) mavzulari bo‘yicha xato yo‘q.</span><span style="color:#6ee7b7; font-weight:700;">0 xato</span>`;
+        weakList.appendChild(li);
+      }
+
+      document.getElementById("pill-1").classList.remove("active");
+      document.getElementById("pill-1").classList.add("done");
+      document.getElementById("pill-2").classList.add("active");
+    }
+
+    function startListening() {
+      showScreen("screen-listening");
+      renderListening();
+    }
+
+    function renderListening() {
+      const item = listeningQuestions[lIndex];
+      document.getElementById("l-counter").textContent = `Listening ${lIndex + 1} / ${listeningQuestions.length}`;
+      document.getElementById("l-progress").style.width = `${((lIndex + 1) / listeningQuestions.length) * 100}%`;
+      document.getElementById("l-points").textContent = `${item.points} ball`;
+      document.getElementById("l-question").textContent = item.q;
+
+      const optWrap = document.getElementById("l-options");
+      optWrap.innerHTML = "";
+      const letters = ["A", "B", "C", "D"];
+
+      item.options.forEach((opt, idx) => {
+        const btn = document.createElement("button");
+        btn.className = "option-btn";
+        btn.innerHTML = `<span class="option-letter">${letters[idx]}</span><span>${opt}</span>`;
+        btn.onclick = () => selectListening(idx, btn);
+        optWrap.appendChild(btn);
+      });
+
+      document.getElementById("l-feedback").classList.add("hidden");
+      document.getElementById("l-next-btn").classList.add("hidden");
+      playCurrentAudio();
+    }
+
+    function playCurrentAudio() {
+      if (!("speechSynthesis" in window)) {
+        showTopAlert("Brauzeringiz ovozli o‘qishni qo‘llab-quvvatlamaydi.");
+        return;
+      }
+      window.speechSynthesis.cancel();
+      const utter = new SpeechSynthesisUtterance(listeningQuestions[lIndex].audio);
+      utter.lang = "en-US";
+      utter.rate = 0.9;
+      window.speechSynthesis.speak(utter);
+    }
+
+    function selectListening(selectedIdx, btn) {
+      const item = listeningQuestions[lIndex];
+      const buttons = document.querySelectorAll("#l-options .option-btn");
+      buttons.forEach(b => b.disabled = true);
+
+      const fb = document.getElementById("l-feedback");
+      fb.classList.remove("hidden", "ok", "bad");
+
+      if (selectedIdx === item.answer) {
+        btn.classList.add("correct");
+        lScore += item.points;
+        fb.classList.add("ok");
+        fb.textContent = `To‘g‘ri! (+${item.points} ball) Audio matni: "${item.audio}"`;
+      } else {
+        btn.classList.add("wrong");
+        buttons[item.answer].classList.add("correct");
+        fb.classList.add("bad");
+        fb.textContent = `Xato! Audio matni: "${item.audio}"`;
+      }
+
+      const nextBtn = document.getElementById("l-next-btn");
+      nextBtn.textContent = lIndex === listeningQuestions.length - 1 ? "Listening natijasini ko‘rish →" : "Keyingi audio →";
+      nextBtn.classList.remove("hidden");
+    }
+
+    function nextListening() {
+      lIndex++;
+      if (lIndex < listeningQuestions.length) {
+        renderListening();
+      } else {
+        showListeningResult();
+      }
+    }
+
+    function showListeningResult() {
+      showScreen("screen-listening-result");
+      const maxL = listeningQuestions.reduce((sum, q) => sum + q.points, 0);
+      const pct = Math.round((lScore / maxL) * 100);
+      const passed = pct >= 70;
+
+      const banner = document.getElementById("l-banner");
+      banner.className = `result-banner ${passed ? "pass" : "fail"}`;
+      document.getElementById("l-status").textContent = passed ? "O‘TDI (PASSED)" : "O‘TMADI (FAILED)";
+      document.getElementById("l-score-text").textContent = `${lScore} / ${maxL}`;
+      document.getElementById("l-percent-text").textContent = `${pct}% natija (O‘tish bali: 14 / ${maxL})`;
+
+      document.getElementById("l-advice").textContent = passed
+        ? "Listening bosqichidan muvaffaqiyatli o‘tdingiz! Endi Speaking bosqichida rasmni ingliz tilida tasvirlang."
+        : "Listeningda biroz ball yetishmadi. Qisqa gaplardagi 'has got', 'these/those' va sonlarni diqqat bilan eshitishga mashq qiling.";
+
+      document.getElementById("pill-2").classList.remove("active");
+      document.getElementById("pill-2").classList.add("done");
+      document.getElementById("pill-3").classList.add("active");
+    }
+
+    function startSpeaking() {
+      showScreen("screen-speaking");
+      initSpeechRecognition();
+    }
+
+    function initSpeechRecognition() {
+      const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+      if (!SpeechRecognition) {
+        document.getElementById("mic-status").textContent = "Mikrofon API topilmadi — matn yozib ham sinashingiz mumkin.";
+        return;
+      }
+      recognition = new SpeechRecognition();
+      recognition.lang = "en-US";
+      recognition.continuous = true;
+      recognition.interimResults = true;
+
+      let finalTranscript = "";
+
+      recognition.onstart = () => {
+        isRecording = true;
+        document.getElementById("mic-toggle-btn").classList.add("recording");
+        document.getElementById("mic-toggle-btn").textContent = "⏹️ To‘xtatish";
+        document.getElementById("mic-status").textContent = "Eshitilmoqda... Inglizcha gapiring";
+      };
+
+      recognition.onresult = (event) => {
+        let interim = "";
+        for (let i = event.resultIndex; i < event.results.length; i++) {
+          const transcript = event.results[i][0].transcript;
+          if (event.results[i].isFinal) {
+            finalTranscript += transcript + ". ";
+          } else {
+            interim += transcript;
+          }
+        }
+        document.getElementById("speech-text").value = finalTranscript + interim;
+      };
+
+      recognition.onerror = () => {
+        stopRecordingUI();
+        document.getElementById("mic-status").textContent = "Mikrofon ruxsatini tekshiring yoki matn yozing.";
+      };
+
+      recognition.onend = () => {
+        stopRecordingUI();
+      };
+    }
+
+    function toggleRecording() {
+      if (!recognition) return;
+      if (isRecording) {
+        recognition.stop();
+      } else {
+        recognition.start();
+      }
+    }
+
+    function stopRecordingUI() {
+      isRecording = false;
+      const btn = document.getElementById("mic-toggle-btn");
+      btn.classList.remove("recording");
+      btn.textContent = "🎙️ Mikrofonni yoqish";
+      document.getElementById("mic-status").textContent = "Yozib olish to‘xtatildi";
+    }
+
+    function clearSpeech() {
+      document.getElementById("speech-text").value = "";
+    }
+
+    function evaluateSpeaking() {
+      if (isRecording && recognition) recognition.stop();
+
+      const raw = document.getElementById("speech-text").value.trim().toLowerCase();
+      if (raw.length < 8) {
+        showTopAlert("Iltimos, avval rasmni ingliz tilida tasvirlab gapiring yoki yozing.");
+        return;
+      }
+
+      hideTopAlert();
+      const words = raw.split(/\s+/).filter(Boolean);
+      let points = 0;
+      const feedback = [];
+
+      if (words.length >= 22) {
+        points += 5;
+        feedback.push("✅ <strong>Nutq hajmi:</strong> Yetarli darajada to‘liq gaplar tuzilgan (+5 ball).");
+      } else if (words.length >= 10) {
+        points += 3;
+        feedback.push("⚠️ <strong>Kamchilik (Hajm):</strong> Gaplar biroz qisqa. Ko‘proq gap ayting (+3 ball).");
+      } else {
+        points += 1;
+        feedback.push("❌ <strong>Kamchilik (Hajm):</strong> Juda kam so‘z ishlatildi. Kamida 4–5 ta gap ayting (+1 ball).");
+      }
+
+      const hasBe = /\b(am|is|are|'m|'s|'re)\b/.test(raw);
+      if (hasBe) {
+        points += 4;
+        feedback.push("✅ <strong>Unit 1–2 (Verb 'be'):</strong> <em>is / are</em> shakllari ishlatilgan (+4 ball).");
+      } else {
+        feedback.push("❌ <strong>Kamchilik (Verb 'be'):</strong> Masalan, <em>'He is a boy'</em> yoki <em>'They are cats'</em> deb ayting.");
+      }
+
+      const hasGot = /\b(has got|have got|has|have)\b/.test(raw);
+      if (hasGot) {
+        points += 4;
+        feedback.push("✅ <strong>Unit 3 (have got / has got):</strong> Egalik konstruksiyasi qo‘llanilgan (+4 ball).");
+      } else {
+        feedback.push("❌ <strong>Kamchilik (have got / has got):</strong> Masalan, <em>'The boy has got a ball'</em> deb tasvirlang.");
+      }
+
+      const hasDeterminers = /\b(a|an|this|that|these|those|my|your|his|her|our|their)\b/.test(raw);
+      if (hasDeterminers) {
+        points += 4;
+        feedback.push("✅ <strong>Artikl / Ko‘rsatish / Egalik olmoshlari:</strong> To‘g‘ri qo‘llanilgan (+4 ball).");
+      } else {
+        points += 1;
+        feedback.push("⚠️ <strong>Kamchilik:</strong> <em>a/an, this/these, his/her</em> so‘zlarini ham ishlating (+1 ball).");
+      }
+
+      const items = ["boy", "girl", "cat", "cats", "ball", "table", "book", "books", "apple", "window", "red", "white", "orange", "small", "big"];
+      const found = items.filter(w => new RegExp(`\\b${w}\\b`).test(raw));
+      if (found.length >= 3) {
+        points += 3;
+        feedback.push(`✅ <strong>Rasm so‘zlari:</strong> Rasmdagi narsalar/sifatlar (${found.slice(0, 5).join(", ")}) aytilgan (+3 ball).`);
+      } else {
+        points += 1;
+        feedback.push("⚠️ <strong>Kamchilik (Lug‘at):</strong> Rasmdagi <em>boy, girl, cats, ball, table, red, white</em> kabi so‘zlardan ko‘proq foydalaning (+1 ball).");
+      }
+
+      sScore = Math.min(20, points);
+      showFinalResult(feedback);
+    }
+
+    function showFinalResult(speakingFeedback) {
+      showScreen("screen-final");
+      document.getElementById("pill-3").classList.remove("active");
+      document.getElementById("pill-3").classList.add("done");
+
+      const totalScore = gScore + lScore + sScore;
+      const passed = totalScore >= 70;
+      const fullName = `${studentData.firstName} ${studentData.lastName}`;
+
+      const banner = document.getElementById("final-banner");
+      banner.className = `result-banner ${passed ? "pass" : "fail"}`;
+      document.getElementById("final-status").textContent = passed ? "O‘TDI (PASSED)" : "O‘TMADI (FAILED)";
+      document.getElementById("final-score").textContent = `${totalScore} / 100`;
+      document.getElementById("final-student-info").textContent = `O‘quvchi: ${fullName} (${studentData.age} yosh, ${studentData.location}) | Umumiy ball: ${totalScore}% (O‘tish bali: 70%)`;
+
+      document.getElementById("sum-grammar").textContent = `${gScore} / 60`;
+      document.getElementById("sum-listening").textContent = `${lScore} / 20`;
+      document.getElementById("sum-speaking").textContent = `${sScore} / 20`;
+
+      document.getElementById("speaking-feedback-details").innerHTML = speakingFeedback.join("<br>");
+
+      const weakTopics = Object.entries(topicStats)
+        .filter(([, d]) => d.wrong > 0)
+        .map(([t]) => t);
+
+      let rec = passed
+        ? `${fullName}, siz Academia English Beginner darsligining Unit 1–3 va PC1 qismi bo‘yicha imtihondan muvaffaqiyatli o‘tdingiz!`
+        : `${fullName}, umumiy natija 70% dan past bo‘ldi. Qayta takrorlab, yana bir bor topshirish tavsiya etiladi.`;
+
+      if (weakTopics.length > 0) {
+        rec += ` Yaxshilash kerak bo‘lgan mavzular: ${weakTopics.join(", ")}.`;
+      }
+
+      document.getElementById("final-recommendation").textContent = rec;
+    }
+  </script>
+</body>
+</html>
